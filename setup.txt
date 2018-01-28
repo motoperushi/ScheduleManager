@@ -1,3 +1,13 @@
+下記を参考にlaravelのトップページが表示されるまで進める
+https://qiita.com/kiida510/items/cc31453f8034ceb73487
 
-laradockリポジトリをclone
-$ git clone https://github.com/LaraDock/laradock.git
+*docker-compose.ymlのインデントは結構シビア
+
+PhpMyAdminを使う場合は
+Laradock/.envのPMA_PORTをnginxのポート番号と被らないようにしておく
+
+プロジェクト名/.envにある情報から
+phpMyAdminへログインできる
+Server:mysql
+User:default
+Pass:secret
