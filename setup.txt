@@ -11,3 +11,27 @@ phpMyAdminへログインできる
 Server:mysql
 User:default
 Pass:secret
+
+下記を参考にAPI作成してみる
+https://beiznotes.org/making-task-list-with-laravel55-1/
+
+migrateファイル作成
+ファイル名…create_tasks_table
+テーブル名…tasks
+$ php artisan make:migration create_tasks_table --create=tasks
+
+migrateファイル反映
+$ php artisan migrate
+
+model作成
+$ php artisan make:model Task
+
+・メモ
+パスワード等の確認は
+vi laradock/.env
+
+Mysqlコンテナへのログイン
+$ docker exec -it laradock_mysql_1 /bin/bash 
+
+DBへの接続
+$ mysql -p default
