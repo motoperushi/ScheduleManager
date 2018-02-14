@@ -22,9 +22,13 @@ $ php artisan make:migration create_tasks_table --create=tasks
 
 migrateファイル反映
 $ php artisan migrate
+* 下記コマンドでworkspaceにログインして作業を行う
+$ docker-compose exec workspace bash
 
 model作成
 $ php artisan make:model Task
+
+* APIが失敗する場合は.envのDB_HOSTがどっかーコンテナ名になっていないことが原因
 
 ・メモ
 パスワード等の確認は
