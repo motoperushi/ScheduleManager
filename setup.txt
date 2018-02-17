@@ -38,4 +38,4 @@ Mysqlコンテナへのログイン
 $ docker exec -it laradock_mysql_1 /bin/bash 
 
 DBへの接続
-$ mysql -p default
+$ mysql mysql -u default -p
