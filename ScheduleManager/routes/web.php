@@ -27,19 +27,17 @@ Route::post('/task', function(Request $request){
 
     // Validation::makeが無いので一旦コメントアウト
     // バリデーション
-//    $validator = Validator::make($request->all(), [
-//        'name' => 'required|max:255',
-//    ]);
-//
-//    if ($validator->fails()){
-//        return redirect('/')
-//            ->withInput()
-//            ->withErrors($validator);
-//    }
+    $validator = Validator::make($request->all(), [
+        'name' => 'required|max:255',
+    ]);
 
-    // TODO
+    if ($validator->fails()){
+        return redirect('/')
+            ->withInput()
+            ->withErrors($validator);
+    }
+
     // task追加処理
-
     $task = new Task();
     $task->name = $request->name;
     $task->save();
@@ -49,5 +47,7 @@ Route::post('/task', function(Request $request){
 });
 
 Route::delete('/task/{task}', function(Task $task){
-    //
+    $task->delete();
+
+    return redirect('/');
 });
